@@ -2,7 +2,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = ex01
+NAME = ex02
 
 OBJS =	main.cpp\
 		Fixed.cpp\

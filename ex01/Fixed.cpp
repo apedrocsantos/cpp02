@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedrosantos <pedrosantos@student.42.fr>    +#+  +:+       +#+        */
+/*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 22:05:43 by pedrosantos       #+#    #+#             */
-/*   Updated: 2023/11/29 15:57:29 by pedrosantos      ###   ########.fr       */
+/*   Updated: 2023/12/07 23:31:29 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,21 @@ Fixed::Fixed(void)
     return;
 }
 
+Fixed::Fixed(int const number) : _value(number * (1 << this->_bits))
+{
+    std::cout << "Int constructor called\n";
+    return;
+}
+
+Fixed::Fixed(float const number) : _value(std::round(number * (1 << this->_bits)))
+{
+    std::cout << "Float constructor called\n";
+    return;
+}
+
 Fixed::Fixed(const Fixed & that)
 {
     std::cout << "Copy constructor called\n";
-    // std::cout << "this address: " << this << "\n";
     *this = that;
     return;
 }
@@ -32,7 +43,6 @@ Fixed & Fixed::operator=(const Fixed & that)
     std::cout << "Copy assignment operator called\n";
     if (this != &that)
         this->_value = that.getRawBits();
-    // std::cout << "this address: " << this << "\n";
     return (*this);
 }
 
@@ -44,6 +54,25 @@ Fixed::~Fixed(void)
 
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called\n";
     return this->_value;
+}
+
+void Fixed::setRawBits(int const raw)
+{
+    this->_value = raw;
+}
+
+float Fixed::toFloat(void) const
+{
+    return (float(this->_value) / (1 << this->_bits));
+}
+
+int Fixed::toInt(void) const
+{
+    return (this->_value / (1 << this->_bits));
+}
+
+std::ostream & operator<<(std::ostream & o, Fixed const & rhs) {
+    o << rhs.toFloat();
+    return (o);
 }

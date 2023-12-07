@@ -6,12 +6,14 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 22:05:49 by pedrosantos       #+#    #+#             */
-/*   Updated: 2023/11/30 18:33:44 by anda-cun         ###   ########.fr       */
+/*   Updated: 2023/12/07 23:31:05 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __FIXED_H__
 #define __FIXED_H__
+
+#include <iostream>
 
 class Fixed
 {
@@ -20,11 +22,31 @@ class Fixed
 
 public:
     Fixed(void);
+    Fixed(int const number);
+    Fixed(float const number);
     Fixed(const Fixed &that);
-    Fixed &operator=(const Fixed & that);
+    Fixed & operator=(const Fixed & that);
+       bool & operator>(const Fixed & that);
+    bool & operator<(const Fixed & that);
+    bool & operator>=(const Fixed & that);
+    bool & operator<=(const Fixed & that);
+    bool & operator==(const Fixed & that);
+    bool & operator!=(const Fixed & that);
+    Fixed & operator+(const Fixed & that);
+    Fixed & operator-(const Fixed & that);
+    Fixed & operator*(const Fixed & that);
+    Fixed & operator++(int);
+    Fixed & operator++(int);
+    Fixed & operator--(int);
+    Fixed & operator--(int);
+    Fixed & operator/(int);
+    float toFloat(void) const;
+    int toInt(void) const;
     ~Fixed(void);
     int getRawBits(void) const;
     void setRawBits(int const raw);
 };
+
+std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
 
 #endif
