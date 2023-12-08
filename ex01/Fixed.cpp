@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 22:05:43 by pedrosantos       #+#    #+#             */
-/*   Updated: 2023/12/07 23:31:29 by anda-cun         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:00:58 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int Fixed::toInt(void) const
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs) {
+    // o.precision(8);
     o << rhs.toFloat();
     return (o);
 }

@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 22:05:49 by pedrosantos       #+#    #+#             */
-/*   Updated: 2023/12/07 23:30:57 by anda-cun         ###   ########.fr       */
+/*   Updated: 2023/12/07 23:46:52 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define __FIXED_H__
 
 #include <iostream>
+
+// Floating point to fixed point conversion: https://www.rfwireless-world.com/calculators/floating-vs-fixed-point-converter.html
 
 class Fixed
 {

@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 22:05:49 by pedrosantos       #+#    #+#             */
-/*   Updated: 2023/12/07 23:31:05 by anda-cun         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:25:58 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,25 @@ public:
     Fixed(int const number);
     Fixed(float const number);
     Fixed(const Fixed &that);
+    bool operator>(const Fixed & that);
+    bool operator<(const Fixed & that);
+    bool operator>=(const Fixed & that);
+    bool operator<=(const Fixed & that);
+    bool operator==(const Fixed & that);
+    bool operator!=(const Fixed & that);
     Fixed & operator=(const Fixed & that);
-       bool & operator>(const Fixed & that);
-    bool & operator<(const Fixed & that);
-    bool & operator>=(const Fixed & that);
-    bool & operator<=(const Fixed & that);
-    bool & operator==(const Fixed & that);
-    bool & operator!=(const Fixed & that);
     Fixed & operator+(const Fixed & that);
     Fixed & operator-(const Fixed & that);
     Fixed & operator*(const Fixed & that);
-    Fixed & operator++(int);
-    Fixed & operator++(int);
-    Fixed & operator--(int);
-    Fixed & operator--(int);
-    Fixed & operator/(int);
+    Fixed & operator/(const Fixed & that);
+    Fixed & operator++(void);
+    Fixed operator++(int);
+    Fixed & operator--(void);
+    Fixed operator--(int);
+    static Fixed & min(Fixed & n1, Fixed & n2);
+    static const Fixed & min(Fixed const & n1, Fixed const & n2);
+    static Fixed & max(Fixed & n1, Fixed & n2);
+    static const Fixed & max(Fixed const & n1, Fixed const & n2);
     float toFloat(void) const;
     int toInt(void) const;
     ~Fixed(void);
