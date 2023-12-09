@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 22:05:43 by pedrosantos       #+#    #+#             */
-/*   Updated: 2023/12/08 00:00:58 by anda-cun         ###   ########.fr       */
+/*   Updated: 2023/12/09 10:36:14 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 Fixed::Fixed(void)
 {
     std::cout << "Default constructor called\n";
-    this->_value = 0;
+    this->_fixed_point_value = 0;
     return;
 }
 
-Fixed::Fixed(int const number) : _value(number * (1 << this->_bits))
+Fixed::Fixed(int const number) : _fixed_point_value(number * (1 << this->_bits))
 {
     std::cout << "Int constructor called\n";
     return;
 }
 
-Fixed::Fixed(float const number) : _value(std::round(number * (1 << this->_bits)))
+Fixed::Fixed(float const number) : _fixed_point_value(std::round(number * (1 << this->_bits)))
 {
     std::cout << "Float constructor called\n";
     return;
@@ -42,7 +42,7 @@ Fixed & Fixed::operator=(const Fixed & that)
 {
     std::cout << "Copy assignment operator called\n";
     if (this != &that)
-        this->_value = that.getRawBits();
+        this->_fixed_point_value = that.getRawBits();
     return (*this);
 }
 
@@ -54,22 +54,22 @@ Fixed::~Fixed(void)
 
 int Fixed::getRawBits(void) const
 {
-    return this->_value;
+    return this->_fixed_point_value;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-    this->_value = raw;
+    this->_fixed_point_value = raw;
 }
 
 float Fixed::toFloat(void) const
 {
-    return (float(this->_value) / (1 << this->_bits));
+    return (float(this->_fixed_point_value) / (1 << this->_bits));
 }
 
 int Fixed::toInt(void) const
 {
-    return (this->_value / (1 << this->_bits));
+    return (this->_fixed_point_value / (1 << this->_bits));
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs) {

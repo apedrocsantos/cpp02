@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 22:05:49 by pedrosantos       #+#    #+#             */
-/*   Updated: 2023/12/07 23:46:52 by anda-cun         ###   ########.fr       */
+/*   Updated: 2023/12/09 10:36:14 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class Fixed
 {
-    int _value;
+    int _fixed_point_value;
     static const int _bits = 8;
 
 public:
