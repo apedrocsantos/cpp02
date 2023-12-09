@@ -6,12 +6,12 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 22:05:49 by pedrosantos       #+#    #+#             */
-/*   Updated: 2023/12/09 10:42:11 by anda-cun         ###   ########.fr       */
+/*   Updated: 2023/12/09 14:44:08 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FIXED_H__
-#define __FIXED_H__
+#ifndef __FIXED_HPP__
+#define __FIXED_HPP__
 
 #include <iostream>
 
