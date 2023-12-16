@@ -4,13 +4,17 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = ex00
 
-OBJS =	main.cpp\
+SRCS =	main.cpp\
 		Fixed.cpp\
+
+
+HPPS =	Fixed.hpp\
+		Fixed.h\
 
 all: $(NAME)
 
-$(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $(NAME) -g
+$(NAME) : $(SRCS) $(HPPS)
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) -g
 
 clean:
 	rm -f $(NAME)
