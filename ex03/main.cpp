@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 22:05:51 by pedrosantos       #+#    #+#             */
-/*   Updated: 2023/12/09 14:33:58 by anda-cun         ###   ########.fr       */
+/*   Updated: 2023/12/17 19:45:24 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,5 @@ int main(void)
         std::cout << "Point is outside triangle\n";
     return 0;
 }
+
+// 445C-BGHZ-GELQ-RNYW-JYAG
