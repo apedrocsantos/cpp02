@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Fixed.h"
+#include "Fixed.hpp"
+#include "Point.hpp"
 
 // https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/ (formula)
 // https://reallysketch.com/app/ (draw triangle)
@@ -20,15 +21,15 @@ struct s_point {
     Fixed x, y;
 };
 
-Fixed area_triangle(s_point A, s_point B, s_point C)
+Fixed area_triangle(Point A, Point B, Point C)
 {
-    Fixed area = (A.x * (B.y - C.y) + B.x * (C.y - A.y) + C.x * (A.y - B.y)) / 2;
+    Fixed area = (A.getX() * (B.getY() - C.getY()) + B.getX() * (C.getY() - A.getY()) + C.getX() * (A.getY() - B.getY())) / 2;
     if (area < 0)
         return (area * -1);
     return (area);
 }
 
-int check_point(s_point A, s_point B, s_point C, s_point P)
+int check_point(Point A, Point B, Point C, Point P)
 {
     Fixed aABC;
     Fixed aACP;
@@ -47,19 +48,11 @@ int check_point(s_point A, s_point B, s_point C, s_point P)
 
 int main(void)
 {
-    s_point A;
-    s_point B;
-    s_point C;
-    s_point P;
+    Point A(5,2);
+    Point B(3,5);
+    Point C(7,5);
+    Point P(5,2);
     
-    A.x = 5;
-    A.y = 2;
-    B.x = 3;
-    B.y = 5;
-    C.x = 7;
-    C.y = 5;
-    P.x = 5;
-    P.y = 2;
     if (check_point(A, B, C, P))
         std::cout << "Point is inside triangle\n";
     else

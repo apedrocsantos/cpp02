@@ -6,10 +6,10 @@ NAME = ex03g
 
 SRCS =	main.cpp\
 		Fixed.cpp\
+		Point.cpp\
 
 
 HPPS =	Fixed.hpp\
-		Fixed.h\
 
 all: $(NAME)
 
