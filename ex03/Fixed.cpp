@@ -12,6 +12,7 @@
 
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 Fixed::Fixed(void)
 {
@@ -26,7 +27,7 @@ Fixed::Fixed(int const number) : _fixed_point_value(number * (1 << this->_bits))
     return;
 }
 
-Fixed::Fixed(float const number) : _fixed_point_value(std::round(number * (1 << this->_bits)))
+Fixed::Fixed(float const number) : _fixed_point_value(roundf(number * (1 << this->_bits)))
 {
     // std::cout << "Float constructor called\n";
     return;

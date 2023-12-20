@@ -11,36 +11,37 @@
 /* ************************************************************************** */
 
 #include "Fixed.h"
+#include <cmath>
 
 Fixed::Fixed(void)
 {
-    std::cout << "Default constructor called\n";
+    std::cout << "Default constructor called: " << this << "\n";
     this->_fixed_point_value = 0;
     return;
 }
 
 Fixed::Fixed(int const number) : _fixed_point_value(number * (1 << this->_bits))
 {
-    std::cout << "Int constructor called\n";
+    std::cout << "Int constructor called " << this << "\n";
     return;
 }
 
-Fixed::Fixed(float const number) : _fixed_point_value(std::round(number * (1 << this->_bits)))
+Fixed::Fixed(float const number) : _fixed_point_value(roundf(number * (1 << this->_bits)))
 {
-    std::cout << "Float constructor called\n";
+    std::cout << "Float constructor called " << this << "\n";
     return;
 }
 
 Fixed::Fixed(const Fixed & that)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "Copy constructor called " << this << "\n";
     *this = that;
     return;
 }
 
 Fixed & Fixed::operator=(const Fixed & that)
 {
-    std::cout << "Copy assignment operator called\n";
+    std::cout << "Copy assignment operator called. this = " << this << " that = " << &that << "\n";
     if (this != &that)
         this->_fixed_point_value = that.getRawBits();
     return (*this);
@@ -48,7 +49,7 @@ Fixed & Fixed::operator=(const Fixed & that)
 
 Fixed::~Fixed(void)
 {
-    std::cout << "Destructor called\n";
+    std::cout << "Destructor called with value " << this->toFloat() << ": " << this << "\n";
     return;
 }
 
