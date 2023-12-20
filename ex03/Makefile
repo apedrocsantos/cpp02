@@ -2,14 +2,16 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = ex03g
+NAME = ex03
 
 SRCS =	main.cpp\
 		Fixed.cpp\
 		Point.cpp\
+		bsp.cpp\
 
 
 HPPS =	Fixed.hpp\
+		Point.hpp\
 
 all: $(NAME)
 
