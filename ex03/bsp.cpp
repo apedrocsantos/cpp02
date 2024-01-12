@@ -13,7 +13,7 @@
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-Fixed area_triangle(Point& A, Point& B, Point& C)
+Fixed area_triangle(Point const A, Point const B, Point const C)
 {
     Fixed area = (A.getX() * (B.getY() - C.getY()) + B.getX() * (C.getY() - A.getY()) + C.getX() * (A.getY() - B.getY())) / 2;
     if (area < 0)
@@ -21,7 +21,7 @@ Fixed area_triangle(Point& A, Point& B, Point& C)
     return (area);
 }
 
-int check_point(Point& A, Point& B, Point& C, Point& P)
+int bsp(Point const A, Point const B, Point const C, Point const P)
 {
     Fixed aABC = area_triangle(A, B, C);
     Fixed aACP = area_triangle(A, C, P);

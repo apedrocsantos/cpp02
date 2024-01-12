@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Fixed.h"
+#include "Fixed.hpp"
 
 int main(void)
 {
@@ -24,5 +24,16 @@ int main(void)
     std::cout << a << std::endl;
     std::cout << b << std::endl;
     std::cout << Fixed::max(a, b) << std::endl;
+
+    // Fixed c(10.0f);
+    // Fixed d(10);
+    // std::cout << (c == d) << std::endl;
+    // d = Fixed(.5f);
+    // std::cout << (c >= d) << std::endl;
+    // std::cout << (c != d) << std::endl;
+    // std::cout << (d / c) << std::endl;
+    // std::cout << c++ << std::endl;
+    // std::cout << c << std::endl;
+    // std::cout << ++c << std::endl;
     return 0;
 }

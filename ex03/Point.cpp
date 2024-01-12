@@ -12,21 +12,27 @@
 
 #include "Point.hpp"
 
+Point::Point() : _x(0), _y(0)
+{
+    return;
+}
+
 Point::Point(const Fixed x, const Fixed y) : _x(x), _y(y)
 {
-    // std::cout << "Point default constructor called\n";
+    // std::cout << "Point constructor called\n";
     std::cout << this->_x << ", " << this->_y << "\n";
     return;
 }
 
 Point::Point(const Point & that) : _x(that._x), _y(that._y)
 {
-    // std::cout << "Point constructor called\n";
+    // std::cout << "Point copy constructor called\n";
     return;
 }
 
 Point & Point::operator=(const Point & that)
 {
+    // std::cout << "Point copy assignment operator called\n";
     if (this != &that)
     {
         (Fixed) this->_x = that.getX();

@@ -21,7 +21,7 @@ class Point
     Fixed const _y;
 
 public:
-    Point() {};
+    Point();
     Point (const Fixed x, const Fixed y);
     Point(const Point & that);
     Point & operator=(const Point & that);

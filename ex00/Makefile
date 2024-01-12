@@ -9,7 +9,6 @@ SRCS =	main.cpp\
 
 
 HPPS =	Fixed.hpp\
-		Fixed.h\
 
 all: $(NAME)
 

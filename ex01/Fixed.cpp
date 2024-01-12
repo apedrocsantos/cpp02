@@ -10,8 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.h"
+#include <iostream>
+#include "Fixed.hpp"
 #include <cmath>
+
+//https://en.cppreference.com/w/cpp/language/operators
 
 Fixed::Fixed(void)
 {
@@ -74,7 +77,6 @@ int Fixed::toInt(void) const
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs) {
-    // o.precision(8);
     o << rhs.toFloat();
     return (o);
 }

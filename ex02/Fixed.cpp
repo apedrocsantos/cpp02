@@ -10,8 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.h"
+#include <iostream>
+#include "Fixed.hpp"
 #include <cmath>
+
+//https://en.cppreference.com/w/cpp/language/operators
 
 Fixed::Fixed(void)
 {
